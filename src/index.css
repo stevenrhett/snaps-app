@@ -49,21 +49,23 @@ a {
 
 .search-form button {
   outline: none;
-  border: none;
+  border: 3px solid #d7dbdf;
   padding: 0 15px;
   border-radius: 0 0.35em 0.35em 0;
   cursor: pointer;
+  border-left: none;
+
 }
 
 .active {
-  background-color: #051c33;
+  /*background-color: #051c33;*/
   cursor: pointer;
 }
 
 input {
   font-size: 1em;
   width: 100%;
-  background-color: #edeff0;
+  /*background-color: #edeff0;*/
   padding: 10px 15px;
   border: 3px solid #d7dbdf;
   border-right: none;

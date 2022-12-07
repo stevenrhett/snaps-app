@@ -18,7 +18,7 @@ const PhotoContextProvider = props => {
       .catch(error => {
         console.log(
           "Encountered an error with fetching and parsing data",
-            {error}
+            error
         );
       });
   };
