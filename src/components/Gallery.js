@@ -20,10 +20,10 @@ const Gallery = props => {
     noImages = <NoImages />; // return 'not found' component if no images fetched
   }
   return (
-    <div>
-      <ul>{images}</ul>
-      {noImages}
-    </div>
+      <div>
+        <ul>{images}</ul>
+        {noImages}
+      </div>
   );
 };
 

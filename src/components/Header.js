@@ -3,13 +3,13 @@ import Form from "./Form";
 import Navigation from "./Navigation";
 
 const Header = ({ history, handleSubmit }) => {
-  return (
-    <div>
-      <h1>Snaps-App</h1>
-      <Form history={history} handleSubmit={handleSubmit} />
-      <Navigation />
-    </div>
-  );
+    return (
+        <div>
+            <h1>Snaps App</h1>
+            <Form history={history} handleSubmit={handleSubmit} />
+            <Navigation />
+        </div>
+    );
 };
 
 export default Header;
