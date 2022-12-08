@@ -1,38 +1,32 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
-const Form = ({ handleSubmit, history }) => {
-  const [searchEntry, setSearchEntry] = useState("");
-  // update search text state
-  const updateSearchInput = e => {
-    setSearchEntry(e.target.value);
-  };
-  return (
-    <form
-      className="search-form"
-      onSubmit={e => handleSubmit(e, history, searchEntry)}
-    >
-      <input
-        type="text"
-        name="search"
-        placeholder="Search..."
-        onChange={updateSearchInput}
-        value={searchEntry}
-      />
-      <button
-        type="submit"
-        className={`search-button ${searchEntry.trim() ? "active" : null}`}
-        disabled={!searchEntry.trim()}
-      >
-        <svg height="32" width="32">
-          <path
-            d="M19.427 21.427a8.5 8.5 0 1 1 2-2l5.585 5.585c.55.55.546 1.43 0 1.976l-.024.024a1.399 1.399 0 0 1-1.976 0l-5.585-5.585zM14.5 21a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13z"
-            fill="#ffffff"
-            fillRule="evenodd"
-          />
-        </svg>
-      </button>
-    </form>
-  );
+const Form = ({handleSubmit, history}) => {
+    const [searchEntry, setSearchEntry] = useState("");
+    // update search text state
+    const updateSearchInput = e => {
+        setSearchEntry(e.target.value);
+    };
+    return (
+        <form
+            className="form-control"
+            onSubmit={e => handleSubmit(e, history, searchEntry)}
+        >
+            <div >
+                <div className="input-group">
+                    <input type="text" name="search" placeholder="Search…" className="input input-bordered"
+                           onChange={updateSearchInput}
+                    />
+                    <button type="submit" className="btn btn-square">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                             stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    );
 };
 
 export default Form;
