@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PhotoContextProvider from "./context/PhotoContext";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Switch, Redirect } from "react-router-dom";
 import Header from "./components/Header";
 import Item from "./components/Item";
 import Search from "./components/Search";
@@ -15,14 +15,14 @@ class App extends Component {
         let url = `/search/${searchInput}`;
         history.push(url);
     };
-
     render() {
         return (
             <PhotoContextProvider>
                 <HashRouter basename="/SnapScout">
                     <CompatRouter>
                     <div className="container">
-                        <Route
+                        <Switch>
+                        <CompatRoute
                             render={props => (
                                 <Header
                                     handleSubmit={this.handleSubmit}
@@ -30,7 +30,6 @@ class App extends Component {
                                 />
                             )}
                         />
-                        <Switch>
                             <CompatRoute
                                 path="/"
                                 render={() => <Redirect to="/mountain" />}
@@ -43,9 +42,7 @@ class App extends Component {
                             <CompatRoute path="/beach" render={() => <Item searchTerm="beach" />} />
                             <CompatRoute path="/bird" render={() => <Item searchTerm="bird" />} />
                             <CompatRoute path="/food" render={() => <Item searchTerm="food" />} />
-                            <CompatRoute
-                                path="/search/:searchInput"
-                                render={props => (
+                            <CompatRoute path="/search/:searchInput" render={props => (
                                     <Search searchTerm={props.match.params.searchInput} />
                                 )}
                             />
